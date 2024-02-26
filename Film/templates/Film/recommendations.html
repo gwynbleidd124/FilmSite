@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% load film_tags %}
+
+{% block content %}
+
+<ul class="recommendations">
+    <li>{% get_random_film %}</li>
+</ul>
+
+{% endblock %}

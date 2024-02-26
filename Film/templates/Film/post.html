@@ -1,0 +1,56 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="post-pr">
+<h1>{{ post.title }}</h1>
+{% if post.photo %}
+    <p><img class="img-post-left" src="{{ post.photo.url }}"></p>
+{% endif %}
+
+{{ post.content | linebreaks }}
+</div>
+{% if user.is_authenticated %}
+  <form action="{% url 'blogpost_like' object.slug %}" method="POST">
+    {% csrf_token %}
+    {% if post_is_liked %}
+    <button class="button-like" type="submit" name="blogpost_id" value="{{object.id}}" class="btn btn-info"> <i class="fa-solid fa-thumbs-up"></i> {{ number_of_likes }} Нравится </button>
+    {% else %}
+    <button class="button-like" type="submit" name="blogpost_id" value="{{object.id}}" class="btn btn-info"> <i class="fa-regular fa-thumbs-up"></i>{{ number_of_likes }} Нравится</button>
+    {% endif %}
+    {% if not post_is_liked %}
+    <button class="button-like" type="submit" name="blogpost_id" value="{{object.id}}" class="btn btn-info"> <i class="fa-solid fa-thumbs-down"></i> Не нравится</button>
+    {% else %}
+    <button class="button-like" type="submit" name="blogpost_id" value="{{object.id}}" class="btn btn-info"> <i class="fa-regular fa-thumbs-down"></i> Не нравится</button>
+    {% endif %}
+  </form>
+
+<h3 class="comments-count">Всего комментариев: {{ post.comments_film.count }}</h3>
+
+{% for item in post.comments_film.all %}
+<div class="comments">
+    {% if item.author.photo %}
+        <p><img class="img-comments" src='{{ item.author.photo.url }}'></p>
+        {% else %}
+        <p><img class="img-comments" src="/media/users/default_logo_user.jpg"></p>
+        {% endif %}
+    <div class="comments-nickname">{{item.author}}</div>
+</div>
+<div class="comments-content">{{item.content|wordwrap:50|linebreaks}}</div>
+{% endfor %}
+
+<div class="comments-form">
+<form action="", method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    <div class="form-error">{{ form.non_field_errors }}</div>
+    <h2 class="add_title">Добавить комментарий</h2>
+    {% for f in form %}
+    <p><label class="form-label" for="{{ f.id_for_label }}">{{ f.label }}</label>{{ f }}</p>
+    <div class="form-error">{{ f.errors }}</div>
+    {% endfor %}
+    <p><button class="button-add-comm" type="submit">Отправить</button></p>
+</form>
+</div>
+{% endif %}
+
+
+{% endblock %}

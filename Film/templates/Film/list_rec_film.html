@@ -1,0 +1,36 @@
+{% load static %}
+
+
+<!-- Сетка карточек товаров -->
+  <h1 class="cards-film">Фильмы</h1>
+<div class="cards">
+  {% for f in random_film %}
+  <div class="card">
+    <h3>{{f.title}}</h3>
+    {% if f.photo %}
+      <p><img class="img-cards-photo" src="{{ f.photo.url }}"></p>
+    {% endif %}
+    {{f.content|truncatewords:12}}
+    <p class="rating-rec">{{f.rating}}/10<img class="star" src="{% static 'Film/images/star2.jpg'%}"/></p>
+    <p class="cards-read"><a class='read-link' href="{{ f.get_absolute_url }}">Читать пост</a></p>
+  </div>
+  {% endfor %}
+</div>
+
+  <h1 class="cards-film">Сериалы</h1>
+<div class="cards">
+  {% for s in random_serial %}
+  <div class="card">
+    <h3>{{s.title}}</h3>
+    {% if s.photo %}
+    <p><img class="img-cards-photo" src="{{ s.photo.url }}"></p>
+    {% endif %}
+    {{s.content|truncatewords:15}}
+    <p class="rating-rec">{{s.rating}}/10<img class="star" src="{% static 'Film/images/star2.jpg'%}"/>
+    <hr>
+    <hr>
+    <p class="cards-read"><a class='read-link' href="{{ s.get_absolute_url }}">Читать пост</a></p>
+  </div>
+  {% endfor %}
+</div>
+

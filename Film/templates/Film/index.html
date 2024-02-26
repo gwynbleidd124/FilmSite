@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+	<ul class="posts">
+	{% for p in posts %}
+		<li class="posts-2">
+						{% if p.photo %}
+   				 <p><img class="img-post-left-small" src="{{ p.photo.url }}"></p>
+			{% endif %}
+			<div class="time-create">{{ p.time_create }} Автор: {{ p.author }}</div>
+			<h2 class="title">{{p.title}} </h2>
+
+			<div class="content">{{p.content}}</div>
+			<div class='rating'>Оценка: {{p.rating}}/10<img class="star" src="{% static 'Film/images/star2.jpg'%}"/></div>
+			<p class="read-post"><a class='read-link' href="{{ p.get_absolute_url }}">Читать пост</a></p>
+
+			<hr>
+		</li>
+	{% endfor %}
+	</ul>
+{% endblock %}
+
+{% block navigation %}
+<nav class="list-pages">
+	<ul>
+		{% if page_obj.has_previous %}
+		<li class="page-num">
+			<a href="?page={{ page_obj.previous_page_number }}">&lt;</a>
+		</li>
+		{% endif %}
+		{% for p in paginator.page_range %}
+		{% if page_obj.number == p %}
+		<li class="page-num page-num-selected">{{ p }}</li>
+		{% elif p >= page_obj.number|add:-2 and p <= page_obj.number|add:2 %}
+		<li class="page-num">
+			<a href="?page={{ p }}">{{ p }}</a>
+		</li>
+		{% endif %}
+		{% endfor %}
+		{% if page_obj.has_next %}
+		<li class="page-num">
+			<a href="?page={{ page_obj.next_page_number }}">&gt;</a>
+		</li>
+		{% endif %}
+
+	</ul>
+</nav>
+{% endblock %}
+

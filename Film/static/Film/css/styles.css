@@ -1,0 +1,458 @@
+
+
+
+html, body {
+	font-family: 'Arial';
+	margin: 0;
+	padding: 0;
+	height: 100%;
+	width: 100%;
+	color: #444;
+
+}
+
+img {
+    width: 25px;
+    height: 25px;
+    position: relative
+}
+
+ul {
+    margin: 0;
+}
+
+/* top menu */
+
+.menu {
+    background-color: black;
+    display: flex;
+    padding-bottom: 0px;
+}
+
+ul.menu li {
+    display: inline; /* Отображать как строчный элемент */
+    margin-right: 3px; /* Отступ слева */
+    border: 2px solid #000; /* Рамка вокруг текста */
+    padding: 20px; /* Поля вокруг текста */
+    font-size: 20px;
+    color: white;
+}
+
+
+.menu a {
+    text-decoration: none;
+    color: #CC5500;
+}
+
+.menu a:hover {
+    color: red;
+}
+
+.login {
+    position: absolute;
+    right: 0;
+    background-color: black;
+}
+
+.icon {
+    width: 50px;
+    height: 50px;
+    top: 5px;
+}
+
+/* end top menu */
+
+/* forms  */
+
+.text-input {
+    font-size: 20px;
+}
+
+.form-label {
+    display: inline-block;
+    min-width: 150px;
+    vertical-align: top;
+    font-size: 20px;
+    padding: 5px;
+}
+
+.add_title {
+    margin-left: 5px;
+}
+
+.checkbox {
+  ms-transform: scale(2); /* IE */
+  moz-transform: scale(2); /* FF */
+  webkit-transform: scale(2); /* Safari and Chrome */
+  o-transform: scale(2); /* Opera */
+  transform: scale(2);
+  padding: 10px;
+}
+
+.button-add {
+    font-size: 25px;
+    margin-left: 160px;
+}
+
+.FormCat {
+    font-size: 50px;
+}
+
+/* end forms */
+
+/* content */
+
+.content {
+    padding-right: 80px;
+	width: 100%;
+	box-sizing: border-box;
+}
+
+.posts {
+    text-align: center;
+}
+
+.time-create {
+    margin-left: 950px;
+    border: 1px solid #F5DEB3;
+    width: 200px;
+    background-color: #F5DEB3;
+}
+
+ul {list-style-type: none;}
+
+.title {
+    margin-bottom: 50px;
+    margin-right: 500px;
+    font-size: 40px;
+}
+
+.content {
+    font-size: 17px;
+}
+
+.rating {
+    margin-left: 400px;
+    font-size: 25px;
+    margin-bottom: 15px;
+}
+
+.read-post {
+    margin-left: 470px;
+    border: 3px solid #F5DEB3;
+    padding: 1px; /* Поля вокруг текста */
+    font-size: 20px;
+    width: 200px;
+    background: #F5DEB3;
+
+}
+
+.read-link {
+    text-decoration: none;
+    color: black;
+}
+
+/* end content */
+
+
+/* sidebar */
+
+.table-content {
+    width: 100%;
+	min-height: 100%;
+	height: 100%;
+	min-height: 750px;
+}
+
+.left-chapters {
+	margin: 0;
+	background: #eee;
+	border-right: 1px solid #ccc;
+	height: 100%;
+}
+.left-chapters ul {
+	width: 200px;
+	margin: 0;
+	padding: 20px 10px 10px 20px;
+	list-style: none;
+	font-size: 20px;
+}
+.left-chapters ul li {
+	margin: 30px 0 0 0;
+	color: #999;
+}
+.left-chapters ul li.selected {color: #0059b2; }
+.left-chapters ul li a {
+	color: #444;
+	text-decoration: none;
+}
+
+.selected li {
+    font-size: 25px;
+}
+
+
+/* end sidebar */
+
+
+/* read_post  */
+
+.post-pr {
+    margin-left: 10px;
+
+}
+
+.img-post-left {
+	width: 300px;
+	height: auto;
+	float: left;
+	padding: 0 10px 10px 0;
+}
+
+.img-post-left-small {
+    width: 300px;
+	height: auto;
+	max-height: 400px;
+	float: left;
+	padding: 0 10px 10px 0;
+
+}
+
+/* end read_post */
+
+/* pagination */
+
+.list-pages {
+    text-align: center;
+    margin-right: 100px;
+    margin: 0 0 20px 0;
+}
+
+.list-pages ul {
+    margin: 20px 0 0 0;
+	padding: 0;
+	list-style: none
+}
+.list-pages ul li {
+	display: inline-block; /* отображает список горизонтально */
+	margin: 0 20px 0 0;
+}
+
+.list-pages a {
+	color: #000;
+	font-size: 25px;
+	text-decoration: none;
+
+}
+
+.list-pages .page-num, .page-num-selected {
+	display: inline-block;
+	width: 60px;
+	height: 44px;
+	padding: 16px 0 0 0;
+	border: 1px solid gray;
+	border-radius: 30px;
+}
+.list-pages .page-num:hover {
+	box-shadow: 3px 3px 1px #d0d0d0;
+}
+.list-pages .page-num-selected {
+	border: none;
+	color: #000;
+	font-size: 25px;
+	background-color: #F5DEB3;
+}
+.list-pages .page-num-selected:hover {
+	box-shadow: none;
+
+}
+
+/* end pagination  */
+
+/* recommendations  */
+
+.recommendations {
+    display: flex;
+    padding-bottom: 0px;
+}
+
+ul.recommendations li {
+    display: inline; /* Отображать как строчный элемент */
+    margin-right: 3px; /* Отступ слева */
+    padding: 20px; /* Поля вокруг текста */
+    font-size: 20px;
+}
+
+.read-post-rec {
+    padding-left: 80px;
+    margin-left: 470px;
+    border: 3px solid #F5DEB3;
+    font-size: 20px;
+    width: 200px;
+    background: #F5DEB3;
+}
+
+.card {
+  width: 225px;
+  min-height: 545px;
+  box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column; /* Размещаем элементы в колонку */
+  border-radius: 4px;
+  transition: 0.2s;
+  position: relative;
+}
+
+
+.card:hover {
+  box-shadow: 4px 8px 16px rgba(255, 102, 51, 0.2);
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 225px);
+  width: 100%;
+  max-width: 1200px;
+  justify-content: center;
+  justify-items: center;
+  column-gap: 30px;
+  row-gap: 40px;
+  margin: 0 auto;
+}
+
+.img-cards-photo {
+    width: 150px;
+    height: 150px;
+    max-height: 200px;
+}
+
+.cards-read {
+    border: 3px solid #F5DEB3;
+    font-size: 20px;
+    width: 200px;
+    background: #F5DEB3;
+    position: absolute;
+    bottom: 0;
+}
+
+.rating-rec {
+    position: absolute;
+    bottom: 40px;
+}
+
+.cards-film {
+    margin-left: 40%;
+}
+
+.table-page {
+	width: 100%;
+	height: 100%;
+	vertical-align: top;
+}
+
+/* end recommendations  */
+
+/* footer */
+
+.footer {
+	box-sizing: border-box;
+	background: #3F4137;
+	padding: 5px;
+	color: #aaa;
+	font-size: 14px;
+	font-family: Verdana, Geneva, Arial, Helvetica;
+	text-align: center;
+	overflow: hidden;
+}
+
+.footer a {
+	text-decoration: underline;
+	color: #aaa;
+}
+
+.icons {
+    font-size: 25px;
+}
+
+.icons a {
+    margin: 4px;
+}
+
+.icons div {
+    margin: 4px;
+}
+
+/* end footer */
+
+/* Профиль */
+
+.img-profile {
+    width: 250px;
+    height: auto;
+}
+
+.info-profile {
+    margin-left: 50px;
+}
+
+.profile {
+    display: grid;
+    grid-template-columns: 220px 500px;
+}
+/* Конец раздела профиль */
+
+/* лайки и комментарии */
+
+.button-like {
+    width: 90px;
+    height: 45px;
+    font-size: 17px;
+    background-color: #F5DEB3;
+}
+
+.text-secondary {
+    padding-left: 16px;
+}
+
+.comments {
+   display: grid;
+    grid-template-columns: 75px 300px;
+    margin-left: 10px;
+}
+
+.comments-nickname {
+    margin-top: 30px;
+    font-size: 20px;
+    margin-left: 10px;
+}
+
+.img-comments {
+    width: 50px;
+    height: 50px;
+    margin-left: 10px;
+
+}
+
+.comments-content {
+    margin-top: -30px;
+    font-size: 20px;
+    width: 500px;
+    margin-left: 22px;
+
+}
+
+.comments-form {
+    margin-left: 16px;
+}
+
+.comments-count {
+    margin-left: 22px;
+}
+
+.button-add-comm {
+    margin-left: 15%;
+    font-size: 25px;
+}
+
+
+/* конец раздела лайки и комментарии */
